@@ -1,4 +1,5 @@
 @echo off
+
 :: BatchGotAdmin
 ::-------------------------------------
 REM  --> Check for permissions
@@ -24,17 +25,17 @@ if '%errorlevel%' NEQ '0' (
     CD /D "%~dp0"
 ::--------------------------------------
 
-set "appdata_dir=%LOCALAPPDATA%\OpenCommandPromptHere\WindowsTerminalIcon"
-set "icon_path=%LOCALAPPDATA%\OpenCommandPromptHere\WindowsTerminalIcon\wt.ico"
-
-if not exist "%appdata_dir%" (
-    mkdir "%appdata_dir%"
+set "WT_PATH="
+for /f "delims=" %%a in ('where /r "%ProgramFiles%\WindowsApps" wt.exe') do (
+    set "WT_PATH=%%a"
+    goto :FoundPath
 )
+echo "Error: Windows Terminal executable not found"
+pause
+exit /b
 
-copy /y "wt.ico" "%appdata_dir%"
-
-reg add "HKEY_CLASSES_ROOT\Directory\Background\shell\Open Command Prompt Here" /v "Icon" /t REG_SZ /d "%icon_path%" /f
+:FoundPath
+reg add "HKEY_CLASSES_ROOT\Directory\Background\shell\Open Command Prompt Here" /v "Icon" /t REG_SZ /d "%WT_PATH%" /f
 reg add "HKEY_CLASSES_ROOT\Directory\Background\shell\Open Command Prompt Here\command" /ve /d "wt -d \"%%V\"" /f
 ftype batfile=wt.exe -w 0 new-tab -d . "%%1" %%*
 reg add "HKEY_CLASSES_ROOT\batfile\shell\runas\command" /ve /d "wt.exe -w 0 new-tab -d . \"%%1\" %%*" /f /reg:64
-
