@@ -36,4 +36,4 @@ copy /y "wt.ico" "%appdata_dir%"
 reg add "HKEY_CLASSES_ROOT\Directory\Background\shell\Open Command Prompt Here" /v "Icon" /t REG_SZ /d "%icon_path%" /f
 reg add "HKEY_CLASSES_ROOT\Directory\Background\shell\Open Command Prompt Here\command" /ve /d "wt -d \"%%V\"" /f
 
-ftype batfile=wt.exe -w 0 new-tab -d . -p "Command Prompt" "%1" %*
+ftype batfile=wt.exe -w 0 new-tab -d . "%%1" %%*
