@@ -25,13 +25,13 @@ if '%errorlevel%' NEQ '0' (
 ::--------------------------------------
 
 set "appdata_dir=%LOCALAPPDATA%\OpenCommandPromptHere\WindowsTerminalIcon"
-set "icon_path=%LOCALAPPDATA%\OpenCommandPromptHere\WindowsTerminalIcon\wt.exe"
+set "icon_path=%LOCALAPPDATA%\OpenCommandPromptHere\WindowsTerminalIcon\wt.ico"
 
 if not exist "%appdata_dir%" (
     mkdir "%appdata_dir%"
 )
 
-copy /y "wt.exe" "%appdata_dir%"
+copy /y "wt.ico" "%appdata_dir%"
 
 reg add "HKEY_CLASSES_ROOT\Directory\Background\shell\Open Command Prompt Here" /v "Icon" /t REG_SZ /d "%icon_path%" /f
 reg add "HKEY_CLASSES_ROOT\Directory\Background\shell\Open Command Prompt Here\command" /ve /d "wt -d \"%%V\"" /f
