@@ -2,7 +2,7 @@
 
 ### A Batch Script to Add the Only Good Feature in Windows 11, Back Into Windows 10!
 
-This super simple script will readd the only feature I found useful on windows 11! It adds the <br> ability to right click in any folder and open that directory in Windows Terminal. Additionally <br>  it also sets Windows Terminal as the default for opening batch scripts.
+This super simple script will re-add the only feature I found useful on windows 11! It adds the <br> ability to right click in any folder and open that directory in Windows Terminal. Additionally <br>  it also sets Windows Terminal as the default for opening batch scripts.
 
 
 ![rightclickshowcase](https://github.com/ezratweaver/OpenInWindowsTerminal/assets/101545981/bb7d0c2d-a89d-44f4-9e5c-b59684f5700b)
