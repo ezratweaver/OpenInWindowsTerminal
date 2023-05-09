@@ -18,7 +18,6 @@ This super simple script will re-add the only feature I found useful on windows 
 
 - Windows 10
 - [Windows Terminal][wt]
-- Thats It!
 
 [wt]: https://github.com/microsoft/terminal
 
@@ -26,4 +25,3 @@ This super simple script will re-add the only feature I found useful on windows 
 
 - Download The Script
 - Run The Script
-- Your Done!
