@@ -30,12 +30,15 @@ for /f "delims=" %%a in ('where /r "%ProgramFiles%\WindowsApps" wt.exe') do (
     set "WT_PATH=%%a"
     goto :FoundPath
 )
-echo "Error: Windows Terminal executable not found"
+echo Error: Windows Terminal executable not found
 pause
 exit /b
 
 :FoundPath
-reg add "HKEY_CLASSES_ROOT\Directory\Background\shell\Open Command Prompt Here" /v "Icon" /t REG_SZ /d "%WT_PATH%" /f
-reg add "HKEY_CLASSES_ROOT\Directory\Background\shell\Open Command Prompt Here\command" /ve /d "wt -d \"%%V\"" /f
+reg add "HKEY_CLASSES_ROOT\Directory\Background\shell\Open in Windows Terminal" /v "Icon" /t REG_SZ /d "%WT_PATH%" /f
+reg add "HKEY_CLASSES_ROOT\Directory\Background\shell\Open in Windows Terminal\command" /ve /d "wt -d \"%%V\"" /f
 ftype batfile=wt.exe -w 0 new-tab -d . "%%1" %%*
 reg add "HKEY_CLASSES_ROOT\batfile\shell\runas\command" /ve /d "wt.exe -w 0 new-tab -d . \"%%1\" %%*" /f /reg:64
+
+echo Open Command Prompt Here, and Window Terminal Defaults, Succesfully Configured
+pause
