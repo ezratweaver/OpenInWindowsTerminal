@@ -1,2 +1,1 @@
-# Open In Windows Terminal
-A script to add the only useful feature from windows 11, back into windows 10.
+![OpenWindowsTerminalHere-3x](https://github.com/ezratweaver/OpenInWindowsTerminal/assets/101545981/6f0ce7f9-bcfd-4ca2-ad57-5b260db59c6c)
