@@ -10,7 +10,7 @@ This super simple script will re-add the only feature I found useful on windows 
 
 ### Features
 
-- Open In Window Terminal Feature From Windows 11, Working in Windows 10
+- Open In Windows Terminal Feature From Windows 11, Working in Windows 10
 - Sets Windows Terminal as Defaut for Batch Scripts
 - Simple to Use, Just One Click and Your Done!
 
