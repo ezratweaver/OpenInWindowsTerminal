@@ -26,8 +26,6 @@ if '%errorlevel%' NEQ '0' (
 ::--------------------------------------
 
 reg delete "HKEY_CLASSES_ROOT\Directory\Background\shell\Open in Windows Terminal" /f
-reg add "HKEY_CLASSES_ROOT\batfile\shell\runas\command" /ve /t REG_EXPAND_SZ /d "%%SystemRoot%%\System32\cmd.exe /C "%%1" %%*" /f
-ftype batfile="%%1" %%*
 
 echo Windows Terminal Defaults Successfully Removed
 pause
